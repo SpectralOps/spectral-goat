@@ -1,0 +1,6 @@
+# ignores known and problematic files, per rule.
+# "problematic" files can be test files, mock data files and so on.
+KEYS001:
+    - .*secrets/rsa/rsa.key*
+SENF005:
+    - .*ipython_security.asc*

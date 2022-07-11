@@ -1,0 +1,9 @@
+apiVersion: openfaas.com/v1alpha2
+kind: FunctionIngress
+metadata:
+  name: nodeinfo-tls
+  namespace: openfaas
+spec:
+  domain: "nodeinfo-tls.myfaas.club"
+  function: "nodeinfo"
+  ingressType: "nginx"

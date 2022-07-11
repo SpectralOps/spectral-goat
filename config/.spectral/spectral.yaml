@@ -1,0 +1,16 @@
+reporter:
+    outputs:
+        stylish: {}        # nice looking CLI reports
+
+match_ignores:
+    ignores:
+    # - match_fingerprint: b76fe610abe3bdaa92d4002dc0516dfa21c2dbf520373c6203469d0dee369888
+     - path: .*
+
+projects:
+    default:
+        project:
+            name: default
+        input:
+            - local: .
+              name: sources

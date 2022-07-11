@@ -1,0 +1,25 @@
+{
+  "name": "jupyter-notebook-deps",
+  "version": "4.0.0",
+  "description": "Jupyter Notebook nodejs dependencies",
+  "author": "Jupyter Developers",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jupyter/notebook.git"
+  },
+  "scripts": {
+    "bower": "bower install",
+    "build": "python setup.py js css",
+    "build:watch": "npm run watch",
+    "watch": "onchange 'notebook/static/**/!(*.min).js' 'notebook/static/**/*.less' 'bower.json' -- npm run build"
+  },
+  "devDependencies": {
+    "bower": "^1.8.8",
+    "less": "~2",
+    "onchange": "^6.0.0",
+    "po2json": "^0.4.5",
+    "requirejs": "^2.3.6"
+  },
+  "dependencies": {}
+}

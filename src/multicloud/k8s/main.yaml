@@ -1,0 +1,25 @@
+apiVersion: extensions/v1
+kind: Ingress
+metadata:
+  name: positive-insecure-annotation
+  annotations:
+    kubernetes.io/ingress.allow-http: "true"
+    email: "42@42.com"
+  labels:
+    owner: "42"
+
+spec:
+  tls:
+    - secretName: secret-cert-myown
+  backend:
+    serviceName: modcluster
+    servicePort: 80
+  securityContext:
+    sysctls:
+    - name: kernel.shm_rmid_forced
+      value: "0"
+    - name: net.ipv4.ip_local_port_range
+      value: "0"
+    runAsUser: 10000
+    runAsGroup: 30000
+    fsGroup: 20000
