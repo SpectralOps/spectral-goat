@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    SPECTRAL_DSN = credentials('spectral-dsn')
+    SPECTRAL_DSN = 'https://spu-a0d55bfbdb2e40eba90dfcc1ac32a073@get.spectralops.io'
   }
   stages {
     stage('install Spectral') {
