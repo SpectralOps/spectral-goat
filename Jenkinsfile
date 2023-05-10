@@ -13,12 +13,5 @@ pipeline {
       steps {
         sh "$HOME/.spectral/spectral scan --include-tags base"
       }
-    }
-    stage('build') {
-      steps {
-        // your build scripts
-        sh "./build.sh"
-      }
-    }
-  }
+    }   
 }
