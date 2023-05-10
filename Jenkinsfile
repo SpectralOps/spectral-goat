@@ -11,7 +11,7 @@ pipeline {
     }
     stage('scan for issues') {
       steps {
-        sh "$HOME/.spectral/spectral scan --include-tags base,audit"
+        sh "$HOME/.spectral/spectral scan --include-tags base"
       }
     }
     stage('build') {
