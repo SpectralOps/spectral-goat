@@ -1,0 +1,23 @@
+name: Main
+on:
+  pull_request:
+    branches: 
+    - master
+    - develop
+    - main
+    
+env:
+  SPECTRAL_DSN: ${{ secrets.SPECTRAL_DSN }}
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - run: ls
+    - run: cp gitlab_host /etc/spectral/gitlab-hook
+    - uses: actions/checkout@v2
+    - name: Install and run Spectral CI
+      uses: spectralops/spectral-github-action@v3
+      with:
+        spectral-dsn: ${{ env.SPECTRAL_DSN }}
+        spectral-args: scan --ok --engines secrets,iac,oss --include-tags base,audit,iac
