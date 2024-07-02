@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install and run Spectral CI
-      uses: spectralops/spectral-github-action@v4
+      uses: SpectralOps/spectral-github-action@v5
       with:
-        spectral-dsn: ${{ env.SPECTRAL_DSN }}
+        spectral-dsn: ${{ secrets.SPECTRAL_DSN }}
         spectral-args: scan --ok --engines secrets,iac,oss --include-tags base,iac
