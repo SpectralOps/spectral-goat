@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Spectral Scan
-      uses: checkpointsw/spectral-github-action@v5    
+      uses: checkpointsw/spectral-github-action@v4
       with:
         spectral-dsn: ${{ secrets.SPECTRAL_DSN }}
         spectral-args: scan --engines secrets,iac,oss
