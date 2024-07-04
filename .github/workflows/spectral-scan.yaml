@@ -1,0 +1,19 @@
+name: Spectral scan
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    
+env:
+  SPECTRAL_DSN: ${{ secrets.SPECTRAL_DSN }}
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Spectral Scan
+      uses: checkpointsw/spectral-github-action@v5    
+      with:
+        spectral-dsn: ${{ secrets.SPECTRAL_DSN }}
+        spectral-args: scan --engines secrets,iac,oss
