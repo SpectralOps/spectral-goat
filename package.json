@@ -1,6 +1,6 @@
 {
   "name": "spectral-goat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:spectralops/spectral-goat.git",
   "author": "Dotan Nahum <jondotan@gmail.com>",
